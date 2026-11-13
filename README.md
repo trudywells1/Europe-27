@@ -1,7 +1,7 @@
-# ✈️ Wells Europe 2026
+# ✈️ Europe 2027 - Take 3
 
 **Bruce & Trudy Wells — Europe Travel Itinerary**
-10 August – 22 September 2026
+4 July – 9 September 2027
 
 ## Destinations
 Istanbul · Zagreb · Croatia Cruise (MV Lady Eleganza) · Rome · Puglia Cycling Tour · Monopoli · Tokyo Stopover
