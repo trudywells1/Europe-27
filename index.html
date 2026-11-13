@@ -842,6 +842,20 @@
     @media (min-width: 601px) {
       .dest-header { height: 420px; }
     }
+  
+    /* Country banners (2027) */
+    .country-banner { background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%); color: #fff; border-radius: 14px; padding: 22px 24px; margin: 40px 0 18px; border-bottom: 3px solid var(--gold); box-shadow: 0 6px 24px rgba(27,58,107,.18); }
+    .country-banner .cb-phase { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+    .country-banner .cb-country { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; line-height: 1.15; margin-top: 6px; }
+    .country-banner .cb-dates { font-size: 13px; opacity: .8; margin-top: 4px; }
+    .glance-table tr.country-row td { background: var(--navy) !important; color: #fff !important; font-weight: 700; font-size: 13px; letter-spacing: .5px; padding: 10px 14px; border-top: 3px solid var(--gold); white-space: normal !important; }
+    .glance-table tr.country-row td span { color: var(--gold); font-weight: 600; margin-left: 8px; }
+    @media print {
+      .country-group { break-before: page; page-break-before: always; }
+      .country-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; margin-top: 0; }
+      .glance-table tr.country-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .booking-card { break-inside: avoid; page-break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
@@ -852,6 +866,7 @@
   <nav class="desktop-nav">
     <a href="#glance"    class="nav-link">At a Glance</a>
     <a href="#flights"   class="nav-link">Flights</a>
+    <a href="#stays"     class="nav-link">Stays</a>
     <a href="#checklist" class="nav-link">Checklist</a>
     <a href="#insurance" class="nav-link">Insurance</a>
   </nav>
@@ -862,6 +877,7 @@
 <nav id="mobile-nav">
   <a href="#glance"    class="nav-link">🗺 At a Glance</a>
   <a href="#flights"   class="nav-link">✈️ All Flights</a>
+  <a href="#stays"     class="nav-link">🏨 Where We're Staying</a>
   <a href="#checklist" class="nav-link">✅ Checklist</a>
   <a href="#insurance" class="nav-link">🛡️ Travel Insurance</a>
 </nav>
@@ -873,7 +889,7 @@
     <span class="masthead-issue">5 Jul – 10 Sep 2027 &nbsp;·&nbsp; Issue No. 2</span>
     <span class="masthead-names">Bruce &amp; Trudy Wells</span>
   </div>
-  <div id="hero-route-label">Bali · Milan · Santorini · Milos · Barcelona · Madeira · Bordeaux · San Sebastián · Genoa · Vernazza · Garmisch · Munich</div>
+  <div id="hero-route-label">Bali · Milan · Santorini · Folegandros · Milos · Girona · Costa Brava · Barcelona · Madeira · Bordeaux · San Sebastián · Santa Margherita · Vernazza · Lake Garda · Verona · Garmisch · Munich</div>
   <div id="hero-content">
     <div class="hero-kicker">A Private Travel Journal</div>
     <h1>
@@ -892,7 +908,8 @@
     <div class="stat"><span class="stat-num">68</span><span class="stat-lbl">Days of Travel</span></div>
     <div class="stat"><span class="stat-num">6</span><span class="stat-lbl">European Countries</span></div>
     <div class="stat"><span class="stat-num">13</span><span class="stat-lbl">Flights Booked</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-lbl">Islands</span></div>
+    <div class="stat"><span class="stat-num">15</span><span class="stat-lbl">Places to Stay</span></div>
+    <div class="stat"><span class="stat-num">12</span><span class="stat-lbl">Days Cycling</span></div>
   </div>
   <div class="hero-scroll-cue">Scroll</div>
 </section>
@@ -916,35 +933,60 @@
   <div class="container">
     <div class="section-label">Chapter I</div>
     <h2 class="section-title">Trip at a Glance</h2>
-    <p class="section-subtitle">Confirmed flights so far. Accommodation, ferries and trains will be added as they're booked (shaded rows).</p>
+    <p class="section-subtitle">Every confirmed flight and stay. Shaded rows are still to be booked or added.</p>
 
     <div style="overflow-x:auto;">
     <table class="glance-table">
       <thead>
-        <tr><th>Date</th><th>Destination</th><th>Nights</th><th>Booking &amp; Reference</th></tr>
+        <tr><th>Date</th><th>Destination</th><th>Nights</th><th>Accommodation / Booking &amp; Reference</th></tr>
       </thead>
       <tbody>
-        <tr style="background:#fff8e6;"><td>Before 4 Jul</td><td>Adelaide → Bali</td><td>—</td><td>⏳ Flight not yet booked</td></tr>
-        <tr><td>Mon 5 Jul</td><td>Bali → Dubai</td><td>—</td><td>Emirates · EK399 · Business · 12:35 AM → 5:35 AM · 7E &amp; 7F · Ref: E95ISZ &nbsp;<a href="https://drive.google.com/file/d/1NMjfPGbJuMRH0-5XArn35Dmb9pzNld87/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
-        <tr><td>Mon 5 Jul</td><td>Dubai → Milan</td><td>1</td><td>Emirates · EK205 · Business · 9:35 AM → 2:10 PM · 7E &amp; 7F · Ref: E95ISZ &nbsp;<a href="https://drive.google.com/file/d/1NMjfPGbJuMRH0-5XArn35Dmb9pzNld87/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
-        <tr><td>Tue 6 Jul</td><td>Milan → Athens → Santorini</td><td>—</td><td>Aegean · A3661 + A3368 · 10:15 AM → 3:55 PM · Ref: 9DUCLA &nbsp;<a href="https://drive.google.com/file/d/10PGjhVjMM9DOchS-sSsCMZgU6VdIhVzf/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
-        <tr style="background:#fff8e6;"><td>6 Jul →</td><td>Santorini, Greece</td><td>—</td><td>⏳ Accommodation to be added</td></tr>
-        <tr style="background:#fff8e6;"><td>TBC</td><td>⛴ Santorini → Milos (Ferry)</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr style="background:#fff8e6;"><td>→ 18 Jul</td><td>Milos, Greece</td><td>—</td><td>⏳ Accommodation to be added</td></tr>
-        <tr><td>Sun 18 Jul</td><td>Milos → Athens → Barcelona</td><td>—</td><td>Olympic Air / Aegean · A37055 + A3712 · 12:55 PM → 5:10 PM · Ref: ZKFFGJ &nbsp;<a href="https://drive.google.com/file/d/1kCkkfd9a2PvFU5PTauBbbBhLoTbZIUzx/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
-        <tr style="background:#fff8e6;"><td>18 Jul – 1 Aug</td><td>Barcelona &amp; beyond</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr><td>Sun 1 Aug</td><td>Barcelona → Lisbon → Madeira</td><td>—</td><td>TAP · TP1041 + TP1687 · Business · 6:00 AM → 11:35 AM · Ref: YPUBD6 · ⚠️ Check-in closes 5:15 AM &nbsp;<a href="https://drive.google.com/file/d/1LIR06IXIiLoYehi6bUCuYXz1U7gztr4K/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 Trudy</a> · <a href="https://drive.google.com/file/d/1pRpqV28OiPvJI5Vrgg9bpsmwEwAb9NNX/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 Bruce</a></td></tr>
-        <tr style="background:#fff8e6;"><td>1–7 Aug</td><td>Madeira, Portugal</td><td>6</td><td>⏳ Accommodation to be added</td></tr>
-        <tr><td>Sat 7 Aug</td><td>Madeira → Bordeaux</td><td>—</td><td>easyJet · EJU1880 · 10:30 AM → 2:25 PM · 7A &amp; 7B · Ref: KDMQZBS &nbsp;<a href="https://drive.google.com/file/d/1DjCLhXuIb7EVI1rU5KtaMg7YD8WiCwmA/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 Booking</a></td></tr>
-        <tr style="background:#fff8e6;"><td>7 Aug →</td><td>Bordeaux, France</td><td>—</td><td>⏳ Accommodation to be added</td></tr>
-        <tr style="background:#fff8e6;"><td>TBC</td><td>🚆 Bordeaux → San Sebastián (Train)</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr style="background:#fff8e6;"><td>→ 16 Aug</td><td>San Sebastián, Spain</td><td>—</td><td>⏳ Accommodation to be added</td></tr>
-        <tr><td>Mon 16 Aug</td><td>San Sebastián → Barcelona → Genoa</td><td>—</td><td>Iberia (Vueling) · IB5184 + IB5136 · 8:30 AM → 12:50 PM · Ref: H5PGB &nbsp;<a href="https://drive.google.com/file/d/1aSLyHMh4TSwud_EzKEBfRkAcL-cWnHRk/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 Trudy</a> · <a href="https://drive.google.com/file/d/1VzMV4ghaYjx7TdJgVhs0IGRQFHcRvsbR/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 Bruce</a></td></tr>
-        <tr style="background:#fff8e6;"><td>TBC</td><td>🚆 Genoa → Vernazza (Train)</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr style="background:#fff8e6;"><td>16 Aug – 9 Sep</td><td>Vernazza → … → Garmisch-Partenkirchen</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr style="background:#fff8e6;"><td>TBC</td><td>🚆 Garmisch-Partenkirchen → Munich (Train)</td><td>—</td><td>⏳ To be added</td></tr>
-        <tr><td>Thu 9 Sep</td><td>Munich → Dubai</td><td>—</td><td>Emirates · EK50 · Business · 3:40 PM → 11:40 PM · 11E &amp; 11F · Ref: 5AT65L &nbsp;<a href="https://drive.google.com/file/d/1oaqPFx1rO6UuWPKBbj5rxB4oa7xUTkoL/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
-        <tr><td>Fri 10 Sep</td><td>Dubai → Adelaide — HOME!</td><td>—</td><td>Emirates · EK440 · Business · 2:05 AM → 8:05 PM · 3E &amp; 3F · Ref: 5AT65L &nbsp;<a href="https://drive.google.com/file/d/1oaqPFx1rO6UuWPKBbj5rxB4oa7xUTkoL/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 E-Tickets</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Before 4 Jul</td><td>✈️ Adelaide → Bali</td><td>—</td><td>⏳ Flight not yet booked</td></tr>
+        <tr class="country-row"><td colspan="4">✈️ Departure <span>4–5 Jul</span></td></tr>
+        <tr><td>Mon 5 Jul</td><td>✈️ Bali → Dubai → Milan</td><td>—</td><td>Emirates · EK399 + EK205 · Business · 12:35 AM → 2:10 PM · 7E &amp; 7F · Ref: E95ISZ &nbsp;<a href="https://drive.google.com/file/d/1NMjfPGbJuMRH0-5XArn35Dmb9pzNld87/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇮🇹 Italy — Milan <span>5–6 Jul</span></td></tr>
+        <tr><td>5–6 Jul</td><td>🇮🇹 Milan Malpensa</td><td>1</td><td>TRIBE Milan Malpensa <a href="https://maps.google.com/?q=TRIBE+Milan+Malpensa+Vizzola+Ticino" class="map-link" target="_blank">📍</a> · Conf: QTHPBHCT &nbsp;<a href="https://drive.google.com/file/d/1lfd4BFRIJoJNiAA_qbedMfvump3d1UHz/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇬🇷 Greece — Santorini · Folegandros · Milos <span>6–18 Jul</span></td></tr>
+        <tr><td>Tue 6 Jul</td><td>✈️ Milan → Athens → Santorini</td><td>—</td><td>Aegean · A3661 + A3368 · 10:15 AM → 3:55 PM · Ref: 9DUCLA &nbsp;<a href="https://drive.google.com/file/d/10PGjhVjMM9DOchS-sSsCMZgU6VdIhVzf/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>6–7 Jul</td><td>🇬🇷 Santorini</td><td>1</td><td>Elements Cave Suites <a href="https://maps.google.com/?q=Elements+Cave+Suites+Megalochori+Santorini" class="map-link" target="_blank">📍</a> · Conf: 5104.059.274 &nbsp;<a href="https://drive.google.com/file/d/1oZPW7i6qU6p6ziiGw8LllVY3Y9yCAZOf/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Wed 7 Jul</td><td>⛴ Santorini → Folegandros (Ferry)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>7–12 Jul</td><td>🇬🇷 Folegandros</td><td>5</td><td>Chora Resort Hotel &amp; Spa <a href="https://maps.google.com/?q=Chora+Resort+Hotel+Folegandros" class="map-link" target="_blank">📍</a> · Conf: 6112.213.516 &nbsp;<a href="https://drive.google.com/file/d/1H9r3hjca_tvmxFqok-t9VNK99RHCWwuc/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Mon 12 Jul</td><td>⛴ Folegandros → Milos (Ferry)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>12–18 Jul</td><td>🇬🇷 Milos</td><td>6</td><td>Captain Zeppos &amp; Ideal Vacations — Azimuth House 1 <a href="https://maps.google.com/?q=Captain+Zeppos+Pollonia+Milos" class="map-link" target="_blank">📍</a> · Conf: PMS002534880 &nbsp;<a href="https://drive.google.com/file/d/1NQiMF_N-UBVRDEoRNvEhP2tg717Z3MN_/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>Sun 18 Jul</td><td>✈️ Milos → Athens → Barcelona</td><td>—</td><td>Olympic Air / Aegean · A37055 + A3712 · 12:55 PM → 5:10 PM · Ref: ZKFFGJ &nbsp;<a href="https://drive.google.com/file/d/1kCkkfd9a2PvFU5PTauBbbBhLoTbZIUzx/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇪🇸 Spain — Girona · Costa Brava · Barcelona <span>18 Jul – 1 Aug</span></td></tr>
+        <tr style="background:#fff8e6;"><td>Sun 18 Jul</td><td>🚆 Barcelona → Girona (Train)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr style="background:#fff8e6;"><td>18–19 Jul</td><td>🇪🇸 Girona</td><td>—</td><td>1 night · ⏳ Accommodation to be booked</td></tr>
+        <tr style="background:#fff8e6;"><td>19–30 Jul</td><td>🚴 Costa Brava Self-Guided Cycling Tour</td><td>—</td><td>Starts in Girona · ⏳ Being finalised</td></tr>
+        <tr><td>30 Jul–1 Aug</td><td>🇪🇸 Barcelona</td><td>2</td><td>Catalonia Born <a href="https://maps.google.com/?q=Catalonia+Born+Barcelona" class="map-link" target="_blank">📍</a> · Conf: 6348.448.381 &nbsp;<a href="https://drive.google.com/file/d/1ogvUWmC9B1-r0zoLz0118VANdISCWrHN/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>Sun 1 Aug</td><td>✈️ Barcelona → Lisbon → Madeira</td><td>—</td><td>TAP · TP1041 + TP1687 · Business · 6:00 AM → 11:35 AM · Ref: YPUBD6 · ⚠️ Check-in closes 5:15 AM &nbsp;<a href="https://drive.google.com/file/d/1LIR06IXIiLoYehi6bUCuYXz1U7gztr4K/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫T</a> <a href="https://drive.google.com/file/d/1pRpqV28OiPvJI5Vrgg9bpsmwEwAb9NNX/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫B</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇵🇹 Portugal — Madeira <span>1–7 Aug</span></td></tr>
+        <tr><td>1–4 Aug</td><td>🇵🇹 Madeira — Ponta do Sol</td><td>3</td><td>Estalagem da Ponta do Sol <a href="https://maps.google.com/?q=Estalagem+da+Ponta+do+Sol+Madeira" class="map-link" target="_blank">📍</a> · Conf: 5429.944.613 &nbsp;<a href="https://drive.google.com/file/d/1vLq4EjseZsaoCjxQlq0TLw18otM-ktVE/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>4–7 Aug</td><td>🇵🇹 Madeira — Funchal</td><td>3</td><td>PortoBay Santa Maria (Adults Only) <a href="https://maps.google.com/?q=PortoBay+Santa+Maria+Funchal" class="map-link" target="_blank">📍</a> · Conf: 6569.740.859 &nbsp;<a href="https://drive.google.com/file/d/1Qcaves2lYAZLXPRVWpKF0e-Oux2s3iod/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>Sat 7 Aug</td><td>✈️ Madeira → Bordeaux</td><td>—</td><td>easyJet · EJU1880 · 10:30 AM → 2:25 PM · 7A &amp; 7B · Ref: KDMQZBS &nbsp;<a href="https://drive.google.com/file/d/1DjCLhXuIb7EVI1rU5KtaMg7YD8WiCwmA/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇫🇷 France — Bordeaux <span>7–11 Aug</span></td></tr>
+        <tr><td>7–11 Aug</td><td>🇫🇷 Bordeaux</td><td>4</td><td>Appartement rénové place du Palais <a href="https://maps.google.com/?q=15+Rue+Ausone+Bordeaux" class="map-link" target="_blank">📍</a> · Conf: 6562.270.570 &nbsp;<a href="https://drive.google.com/file/d/1584pl-NRabR1n4iy29ZF89xEAQOgmZ9d/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Wed 11 Aug</td><td>🚆 Bordeaux → San Sebastián (Train)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr class="country-row"><td colspan="4">🇪🇸 Spain — San Sebastián <span>11–16 Aug</span></td></tr>
+        <tr><td>11–16 Aug</td><td>🇪🇸 San Sebastián</td><td>5</td><td>Pensión Peñaflorida <a href="https://maps.google.com/?q=Pension+Penaflorida+San+Sebastian" class="map-link" target="_blank">📍</a> · Conf: 6296.060.881 &nbsp;<a href="https://drive.google.com/file/d/1kBAIjs-lxu4ELKVS5FHjFjYIkG2r1G1v/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>Mon 16 Aug</td><td>✈️ San Sebastián → Barcelona → Genoa</td><td>—</td><td>Iberia (Vueling) · IB5184 + IB5136 · 8:30 AM → 12:50 PM · Ref: H5PGB &nbsp;<a href="https://drive.google.com/file/d/1aSLyHMh4TSwud_EzKEBfRkAcL-cWnHRk/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫T</a> <a href="https://drive.google.com/file/d/1VzMV4ghaYjx7TdJgVhs0IGRQFHcRvsbR/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫B</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇮🇹 Italy — Liguria · Cinque Terre · Lake Garda · Verona <span>16–30 Aug</span></td></tr>
+        <tr style="background:#fff8e6;"><td>Mon 16 Aug</td><td>🚆 Genoa → Santa Margherita (Train)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>16–20 Aug</td><td>🇮🇹 Santa Margherita Ligure</td><td>4</td><td>Hotel Laurin <a href="https://maps.google.com/?q=Hotel+Laurin+Santa+Margherita+Ligure" class="map-link" target="_blank">📍</a> · Conf: 2026103152736472 &nbsp;<a href="https://drive.google.com/file/d/1QDDYl5ozJMiVkDYy9UM8VqaEUs0kNGvr/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Fri 20 Aug</td><td>🚆 Santa Margherita → Vernazza (Train)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>20–24 Aug</td><td>🇮🇹 Vernazza, Cinque Terre</td><td>4</td><td>MADA Charm Apartments Piazza <a href="https://maps.google.com/?q=MADA+Charm+Apartments+Piazza+Vernazza" class="map-link" target="_blank">📍</a> · Conf: 6393.550.081 &nbsp;<a href="https://drive.google.com/file/d/1TH2wMVTj2-4k6DVmgPOSeHI7WzbbOYlN/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Tue 24 Aug</td><td>🚆 Vernazza → Lake Garda</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>24–28 Aug</td><td>🇮🇹 Bardolino, Lake Garda</td><td>4</td><td>Kriss Internazionale Hotel <a href="https://maps.google.com/?q=Kriss+Internazionale+Hotel+Bardolino" class="map-link" target="_blank">📍</a> · Conf: 6261.672.713 &nbsp;<a href="https://drive.google.com/file/d/1ti7aCBHIhGKs-KVDmyCpcqXGX6uiWLqu/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Sat 28 Aug</td><td>Bardolino → Verona</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>28–30 Aug</td><td>🇮🇹 Verona</td><td>2</td><td>Opera Relais de Charme Aparthotel <a href="https://maps.google.com/?q=Opera+Relais+de+Charme+Verona" class="map-link" target="_blank">📍</a> · Conf: 6954.345.318 &nbsp;<a href="https://drive.google.com/file/d/1P3q9LtmZV62xPR47wOc7hGJJ4jXZuFb8/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🇩🇪 Germany — Garmisch-Partenkirchen · Munich <span>30 Aug – 9 Sep</span></td></tr>
+        <tr style="background:#fff8e6;"><td>Mon 30 Aug</td><td>🚆 Verona → Garmisch-Partenkirchen</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>30 Aug–4 Sep</td><td>🇩🇪 Garmisch-Partenkirchen</td><td>5</td><td>Ferienhaus Windschäufeln <a href="https://maps.google.com/?q=Windschaufelnstrasse+6A+Garmisch-Partenkirchen" class="map-link" target="_blank">📍</a> · Conf: 6077.983.739 &nbsp;<a href="https://drive.google.com/file/d/1jr1jSnzbvusXC1-RCccLSX50tvuDV9US/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr style="background:#fff8e6;"><td>Sat 4 Sep</td><td>🚆 Garmisch-Partenkirchen → Munich (Train)</td><td>—</td><td>⏳ To be added</td></tr>
+        <tr><td>4–9 Sep</td><td>🇩🇪 Munich</td><td>5</td><td>Airbnb — Munich Retreat, Studio for Six <a href="https://maps.google.com/?q=Thorwaldsenstrasse+29C+80335+Munich" class="map-link" target="_blank">📍</a> · Conf: HMYDBC5X4Z &nbsp;<a href="https://drive.google.com/file/d/1Fnmomj6JbnFhhS9MZix8LkfJBZPuzydb/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr><td>Thu 9 Sep</td><td>✈️ Munich → Dubai</td><td>—</td><td>Emirates · EK50 · Business · 3:40 PM → 11:40 PM · 11E &amp; 11F · Ref: 5AT65L &nbsp;<a href="https://drive.google.com/file/d/1oaqPFx1rO6UuWPKBbj5rxB4oa7xUTkoL/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
+        <tr class="country-row"><td colspan="4">🏠 Home <span>10 Sep</span></td></tr>
+        <tr><td>Fri 10 Sep</td><td>✈️ Dubai → Adelaide — 🏠 HOME!</td><td>—</td><td>Emirates · EK440 · Business · 2:05 AM → 8:05 PM · 3E &amp; 3F · Ref: 5AT65L &nbsp;<a href="https://drive.google.com/file/d/1oaqPFx1rO6UuWPKBbj5rxB4oa7xUTkoL/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫</a></td></tr>
       </tbody>
     </table>
     </div>
@@ -1075,24 +1117,171 @@
 </section>
 
 <!-- ══════════════════════════════════════════════════════════ -->
+<!-- ACCOMMODATION                                              -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="stays">
+  <div class="container" style="padding-bottom:40px;">
+    <div class="section-label">Chapter III</div>
+    <h2 class="section-title">Where We're Staying</h2>
+    <p class="section-subtitle">Tap 📍 for the map, 📋 to copy the confirmation number, or 🎫 to open the booking.</p>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase I · Milan</div>
+        <div class="cb-country">🇮🇹 Italy</div>
+        <div class="cb-dates">5 – 6 July 2027</div>
+      </div>
+      <div class="booking-card" id="stay-milan">
+        <h4>🇮🇹 Milan Malpensa — TRIBE Milan Malpensa <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Mon 5 Jul → Tue 6 Jul · 1 night</div><div class="info-row-label">Address</div><div class="info-row-value">Via Gabriele d'Annunzio 8, Vizzola Ticino (near Malpensa Airport) <a href="https://maps.google.com/?q=TRIBE+Milan+Malpensa+Vizzola+Ticino" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">TRIBE Essential · 22 m² · no breakfast</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 3:00 PM · check-out by 12:00 PM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">QTHPBHCT <button class="copy-ref" data-ref="QTHPBHCT">📋</button> · Trudy's Accor account</div><div class="info-row-label">Price</div><div class="info-row-value">€204.45 total · 8,000 Accor points used · <strong>€44.45 to pay at hotel</strong></div><div class="info-row-label">Cancellation</div><div class="info-row-value">See booking</div><div class="info-row-label">Contact</div><div class="info-row-value">+39 0331 183 2800 · HB827@mytribehotel.com</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1lfd4BFRIJoJNiAA_qbedMfvump3d1UHz/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">✈️ Close to the airport for the 10:15 AM Aegean flight to Athens on 6 Jul (Terminal 1).</div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase II · Santorini · Folegandros · Milos</div>
+        <div class="cb-country">🇬🇷 Greece</div>
+        <div class="cb-dates">6 – 18 July 2027</div>
+      </div>
+      <div class="booking-card" id="stay-santorini">
+        <h4>🇬🇷 Santorini — Elements Cave Suites <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Tue 6 Jul → Wed 7 Jul · 1 night</div><div class="info-row-label">Address</div><div class="info-row-value">Megalochori, Santorini <a href="https://maps.google.com/?q=Elements+Cave+Suites+Megalochori+Santorini" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Junior Suite · terrace · breakfast included</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in 3:00 PM–midnight · check-out by 11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">5104.059.274 <button class="copy-ref" data-ref="5104.059.274">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€218 · pay at property</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>7 Jun 2027</strong> · after that non-refundable</div><div class="info-row-label">Contact</div><div class="info-row-value">+30 694 988 6050</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1oZPW7i6qU6p6ziiGw8LllVY3Y9yCAZOf/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="warn-box" style="margin-top:10px;"><strong>⚠️ Booked for 1 adult</strong>This booking is for 1 guest only. Change it to 2 adults on Booking.com. You also asked them about their airport shuttle; the flight lands 3:55 PM.</div>
+      </div>
+      <div class="booking-card" id="stay-folegandros">
+        <h4>🇬🇷 Folegandros — Chora Resort Hotel &amp; Spa <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Wed 7 Jul → Mon 12 Jul · 5 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Chora, Folegandros <a href="https://maps.google.com/?q=Chora+Resort+Hotel+Folegandros" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Superior Double Room, Pool View · private hot tub · terrace · breakfast included</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in 3:00–11:30 PM · check-out 8:00–11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6112.213.516 <button class="copy-ref" data-ref="6112.213.516">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,525 (approx. AUD $2,420) · charged in the 21 days before arrival</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>15 Jun 2027</strong> · then €1,475 · dates can't be changed</div><div class="info-row-label">Contact</div><div class="info-row-value">+30 21 0894 0811</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1H9r3hjca_tvmxFqok-t9VNK99RHCWwuc/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div><div class="info-row-label">Port Transfer</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1YhIPe5OZreWLU8XbIOFWBnctMX4xohz6/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🚐 Transfer details (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">🚐 <strong>Free port transfer</strong> — email the hotel your ferry name and arrival time 1–2 days before you arrive.</div>
+      </div>
+      <div class="booking-card" id="stay-milos">
+        <h4>🇬🇷 Milos — Captain Zeppos &amp; Ideal Vacations — Azimuth House 1 <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Mon 12 Jul → Sun 18 Jul · 6 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Pollonia, Milos <a href="https://maps.google.com/?q=Captain+Zeppos+Pollonia+Milos" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Azimuth House 1 · room only</div><div class="info-row-label">Guests</div><div class="info-row-value">Bruce, Trudy, Lucas &amp; Chloe</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 3:00 PM · check-out by 11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">PMS002534880 <button class="copy-ref" data-ref="PMS002534880">📋</button> · Direct</div><div class="info-row-label">Price</div><div class="info-row-value">€3,012 total · €900 deposit paid · <strong>balance €2,112 in cash on arrival</strong></div><div class="info-row-label">Cancellation</div><div class="info-row-value">Deposit refundable up to 90 days before arrival (by about 13 Apr 2027) · dates and guest numbers can't be changed once paid</div><div class="info-row-label">Contact</div><div class="info-row-value">+30 694 820 1088 · info@captainzeppos.com</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1NQiMF_N-UBVRDEoRNvEhP2tg717Z3MN_/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">💶 Bring €2,112 cash for the balance. Let them know your arrival time in advance.</div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase III · Girona · Costa Brava · Barcelona</div>
+        <div class="cb-country">🇪🇸 Spain</div>
+        <div class="cb-dates">18 July – 1 August 2027</div>
+      </div>
+      <div class="booking-card" style="border-left:4px solid var(--gold);">
+        <h4>🚴 Girona &amp; Costa Brava Self-Guided Cycling Tour <span class="badge badge-gold">Being Finalised</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Girona night Sun 18 Jul · cycling Mon 19 – Fri 30 Jul</div><div class="info-row-label">Start</div><div class="info-row-value">Girona</div><div class="info-row-label">Status</div><div class="info-row-value">⏳ Details to be added once confirmed</div></div>
+      </div>
+      <div class="booking-card" id="stay-barcelona">
+        <h4>🇪🇸 Barcelona — Catalonia Born <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Fri 30 Jul → Sun 1 Aug · 2 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Rec Comtal 16–18, Ciutat Vella, Barcelona <a href="https://maps.google.com/?q=Catalonia+Born+Barcelona" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Double Room (1 double bed requested) · no meals</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 3:00 PM · check-out by 12:00 PM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6348.448.381 <button class="copy-ref" data-ref="6348.448.381">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€426.96 incl. city tax · pay at property</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>27 Jul 2027</strong> · then €195</div><div class="info-row-label">Contact</div><div class="info-row-value">+34 932 68 86 00</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1ogvUWmC9B1-r0zoLz0118VANdISCWrHN/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="warn-box" style="margin-top:10px;"><strong>⚠️ Early departure 1 Aug</strong>TAP check-in closes 5:15 AM at Barcelona airport. Book a taxi for about 4:00 AM.</div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase IV · Madeira — Ponta do Sol · Funchal</div>
+        <div class="cb-country">🇵🇹 Portugal</div>
+        <div class="cb-dates">1 – 7 August 2027</div>
+      </div>
+      <div class="booking-card" id="stay-pontadosol">
+        <h4>🇵🇹 Madeira — Ponta do Sol — Estalagem da Ponta do Sol <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Sun 1 Aug → Wed 4 Aug · 3 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Quinta da Rochinha nº6, Ponta do Sol, Madeira <a href="https://maps.google.com/?q=Estalagem+da+Ponta+do+Sol+Madeira" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Double Room with Sea View · balcony · breakfast included</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 2:00 PM · check-out by 12:00 PM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">5429.944.613 <button class="copy-ref" data-ref="5429.944.613">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€798 · pay at property</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>17 Jul 2027</strong> · then first night charged</div><div class="info-row-label">Contact</div><div class="info-row-value">+351 291 970 200</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1vLq4EjseZsaoCjxQlq0TLw18otM-ktVE/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+      </div>
+      <div class="booking-card" id="stay-funchal">
+        <h4>🇵🇹 Madeira — Funchal — PortoBay Santa Maria (Adults Only) <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Wed 4 Aug → Sat 7 Aug · 3 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Avenida do Mar e das Comunidades Madeirenses 50, Funchal <a href="https://maps.google.com/?q=PortoBay+Santa+Maria+Funchal" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Room with Sea View · balcony · 2 single beds · breakfast included</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 2:00 PM · check-out by 12:00 PM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6569.740.859 <button class="copy-ref" data-ref="6569.740.859">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,021 · pay at check-in</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>1 Aug 2027</strong> · then non-refundable</div><div class="info-row-label">Contact</div><div class="info-row-value">+351 291 206 700</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1Qcaves2lYAZLXPRVWpKF0e-Oux2s3iod/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">✈️ Check out 7 Aug for the 10:30 AM easyJet flight to Bordeaux (bag drop opens 8:30 AM).</div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase V · Bordeaux</div>
+        <div class="cb-country">🇫🇷 France</div>
+        <div class="cb-dates">7 – 11 August 2027</div>
+      </div>
+      <div class="booking-card" id="stay-bordeaux">
+        <h4>🇫🇷 Bordeaux — Appartement rénové place du Palais <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Sat 7 Aug → Wed 11 Aug · 4 nights</div><div class="info-row-label">Address</div><div class="info-row-value">15 Rue Ausone, Bordeaux <a href="https://maps.google.com/?q=15+Rue+Ausone+Bordeaux" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">One-Bedroom Apartment · kitchen · washing machine · stairs only</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 3:00 PM · check-out by 11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6562.270.570 <button class="copy-ref" data-ref="6562.270.570">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€950.80 incl. city tax &amp; cleaning</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>1 Aug 2027</strong> · then €850</div><div class="info-row-label">Contact</div><div class="info-row-value">+33 6 40 33 26 90</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1584pl-NRabR1n4iy29ZF89xEAQOgmZ9d/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase VI · San Sebastián</div>
+        <div class="cb-country">🇪🇸 Spain</div>
+        <div class="cb-dates">11 – 16 August 2027</div>
+      </div>
+      <div class="booking-card" id="stay-sansebastian">
+        <h4>🇪🇸 San Sebastián — Pensión Peñaflorida <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Wed 11 Aug → Mon 16 Aug · 5 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Calle Peñaflorida 1A 1º, San Sebastián <a href="https://maps.google.com/?q=Pension+Penaflorida+San+Sebastian" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Superior Double/Twin, City View · balcony · no meals</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in 2:00–8:00 PM · check-out 9:00–11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6296.060.881 <button class="copy-ref" data-ref="6296.060.881">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,278 · pay at property</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>5 Aug 2027</strong> · then €1,278</div><div class="info-row-label">Contact</div><div class="info-row-value">+34 608 28 41 84</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1kBAIjs-lxu4ELKVS5FHjFjYIkG2r1G1v/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="warn-box" style="margin-top:10px;"><strong>⚠️ Check-in closes 8:00 PM</strong>Let them know your arrival time. On 16 Aug your flight leaves San Sebastián airport at 8:30 AM.</div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase VII · Santa Margherita · Vernazza · Lake Garda · Verona</div>
+        <div class="cb-country">🇮🇹 Italy</div>
+        <div class="cb-dates">16 – 30 August 2027</div>
+      </div>
+      <div class="booking-card" id="stay-santamargherita">
+        <h4>🇮🇹 Santa Margherita Ligure — Hotel Laurin <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Mon 16 Aug → Fri 20 Aug · 4 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Lungomare Corso G. Marconi 3, Santa Margherita Ligure <a href="https://maps.google.com/?q=Hotel+Laurin+Santa+Margherita+Ligure" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Double Room with Balcony &amp; Sea View · bed &amp; breakfast</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in 3:00–10:00 PM · check-out 7:30–11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">2026103152736472 <button class="copy-ref" data-ref="2026103152736472">📋</button> · Hotel direct</div><div class="info-row-label">Price</div><div class="info-row-value">€1,290 · charged 3 days before arrival · city tax €4 pp/night paid at departure</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>12 Aug 2027</strong></div><div class="info-row-label">Contact</div><div class="info-row-value">+39 0185 289971 · info@laurinhotel.it</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1QDDYl5ozJMiVkDYy9UM8VqaEUs0kNGvr/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+      </div>
+      <div class="booking-card" id="stay-vernazza">
+        <h4>🇮🇹 Vernazza, Cinque Terre — MADA Charm Apartments Piazza <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Fri 20 Aug → Tue 24 Aug · 4 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Piazza Guglielmo Marconi 2 (1st floor), Vernazza <a href="https://maps.google.com/?q=MADA+Charm+Apartments+Piazza+Vernazza" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">One-Bedroom Apartment · private hot tub · sea view · stairs only</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in 3:00–10:00 PM · check-out by 10:30 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6393.550.081 <button class="copy-ref" data-ref="6393.550.081">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,402.15 incl. city tax &amp; cleaning</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>20 Jul 2027</strong> · then €1,308.15</div><div class="info-row-label">Contact</div><div class="info-row-value">+39 349 245 2290</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1TH2wMVTj2-4k6DVmgPOSeHI7WzbbOYlN/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">ℹ️ Let them know your arrival time in advance.</div>
+      </div>
+      <div class="booking-card" id="stay-bardolino">
+        <h4>🇮🇹 Bardolino, Lake Garda — Kriss Internazionale Hotel <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Tue 24 Aug → Sat 28 Aug · 4 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Lungolago Cipriani 3, Bardolino <a href="https://maps.google.com/?q=Kriss+Internazionale+Hotel+Bardolino" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Deluxe Double with Balcony &amp; Lake View · extra-large bed</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 2:00 PM · check-out 7:30–11:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6261.672.713 <button class="copy-ref" data-ref="6261.672.713">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,620.80 incl. city tax · pay at property</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>16 Aug 2027</strong> · then €1,604.80</div><div class="info-row-label">Contact</div><div class="info-row-value">+39 045 621 2433</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1ti7aCBHIhGKs-KVDmyCpcqXGX6uiWLqu/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+      </div>
+      <div class="booking-card" id="stay-verona">
+        <h4>🇮🇹 Verona — Opera Relais de Charme Aparthotel <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Sat 28 Aug → Mon 30 Aug · 2 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Via Valerio Catullo 1, Verona <a href="https://maps.google.com/?q=Opera+Relais+de+Charme+Verona" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Standard Studio · kitchenette</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 3:30 PM · check-out by 10:30 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6954.345.318 <button class="copy-ref" data-ref="6954.345.318">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€546.80 incl. city tax · pay during stay</div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>22 Aug 2027</strong> · then €532.80</div><div class="info-row-label">Contact</div><div class="info-row-value">+39 045 570 6614</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1P3q9LtmZV62xPR47wOc7hGJJ4jXZuFb8/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+      </div>
+    </div>
+    <div class="country-group">
+      <div class="country-banner">
+        <div class="cb-phase">Phase VIII · Garmisch-Partenkirchen · Munich</div>
+        <div class="cb-country">🇩🇪 Germany</div>
+        <div class="cb-dates">30 August – 9 September 2027</div>
+      </div>
+      <div class="booking-card" id="stay-garmisch">
+        <h4>🇩🇪 Garmisch-Partenkirchen — Ferienhaus Windschäufeln <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Mon 30 Aug → Sat 4 Sep · 5 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Windschäufelnstraße 6A, Garmisch-Partenkirchen <a href="https://maps.google.com/?q=Windschaufelnstrasse+6A+Garmisch-Partenkirchen" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Three-Bedroom House · mountain view · balcony · fireplace · free parking</div><div class="info-row-label">Guests</div><div class="info-row-value">Bruce, Trudy, Jack, Taylor &amp; Vince</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in from 4:00 PM · check-out by 10:00 AM · keys in key safe by the front door</div><div class="info-row-label">Confirmation</div><div class="info-row-value">6077.983.739 <button class="copy-ref" data-ref="6077.983.739">📋</button> · Booking.com</div><div class="info-row-label">Price</div><div class="info-row-value">€1,959.15 incl. cleaning &amp; spa tax · <strong>paid by bank transfer before arrival</strong></div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation until <strong>30 Jul 2027</strong> · then €1,658.54</div><div class="info-row-label">Contact</div><div class="info-row-value">Apartment Management Skinner · +49 8821 7087048 · mobile +49 152 02429806 · reservierung@gapa-ferien.de</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1jr1jSnzbvusXC1-RCccLSX50tvuDV9US/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div><div class="info-row-label">Arrival Info &amp; Bank Details</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1IY4_FD024vkp0swluqdr1CSJyGIy_tnj/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🏦 Arrival letter (PDF)</a></div></div>
+        <div class="warn-box" style="margin-top:10px;"><strong>⚠️ Before arrival</strong>1) Complete the online guest registration (link in the arrival letter). 2) Pay the tourist tax (€3 pp/night) by bank transfer at least 14 days before. 3) The key-safe code appears in your guest folder 2 days before. 4) Email them your address for the guest-folder login.</div>
+      </div>
+      <div class="booking-card" id="stay-munich">
+        <h4>🇩🇪 Munich — Airbnb — Munich Retreat, Studio for Six <span class="badge badge-green">Booked</span></h4>
+        <div class="info-grid"><div class="info-row-label">Dates</div><div class="info-row-value">Sat 4 Sep → Thu 9 Sep · 5 nights</div><div class="info-row-label">Address</div><div class="info-row-value">Thorwaldsenstraße 29C, Munich <a href="https://maps.google.com/?q=Thorwaldsenstrasse+29C+80335+Munich" class="map-link" target="_blank">📍</a></div><div class="info-row-label">Room</div><div class="info-row-value">Entire apartment · 2 bathrooms · A/C</div><div class="info-row-label">Guests</div><div class="info-row-value">Bruce, Trudy, Taylor &amp; Vince</div><div class="info-row-label">Check-in / out</div><div class="info-row-value">Check-in after 3:00 PM · check-out by 10:00 AM</div><div class="info-row-label">Confirmation</div><div class="info-row-value">HMYDBC5X4Z <button class="copy-ref" data-ref="HMYDBC5X4Z">📋</button> · Airbnb</div><div class="info-row-label">Price</div><div class="info-row-value">AUD $2,574.25 · <strong>charged to Amex on 22 Aug 2027</strong></div><div class="info-row-label">Cancellation</div><div class="info-row-value">Free cancellation before 3:00 PM on <strong>30 Aug 2027</strong> · partial refund after that</div><div class="info-row-label">Contact</div><div class="info-row-value">Host Nicole · +49 176 85968091</div><div class="info-row-label">Booking</div><div class="info-row-value"><a href="https://drive.google.com/file/d/1Fnmomj6JbnFhhS9MZix8LkfJBZPuzydb/view?usp=share_link" target="_blank" style="color:var(--navy);font-weight:700;">🎫 View Booking (PDF)</a></div></div>
+        <div class="note-box" style="margin-top:10px;">✈️ Check out 9 Sep · EK50 leaves Munich at 3:40 PM.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
 <!-- CHECKLIST                                                  -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <section id="checklist">
   <div class="container">
-    <div class="section-label">Chapter III</div>
+    <div class="section-label">Chapter IV</div>
     <h2 class="section-title">Pre-Departure Checklist</h2>
     <div class="booking-card">
       <h4>📋 Still To Do</h4>
       <ul class="checklist">
         <li>🔴 <strong>Travel insurance</strong> — current Qantas annual policy ends <strong>10 Aug 2027</strong>, part-way through the trip. Renew or extend to cover until 10 Sep.</li>
-        <li>⏳ Book Adelaide → Bali flight (need to be at Denpasar airport the evening of Sun 4 Jul)</li>
-        <li>⏳ Book Santorini → Milos ferry</li>
-        <li>⏳ Book Bordeaux → San Sebastián train</li>
-        <li>⏳ Book Genoa → Vernazza train</li>
-        <li>⏳ Book Garmisch-Partenkirchen → Munich train</li>
+        <li>🔴 <strong>Santorini</strong> — Elements Cave Suites is booked for <strong>1 adult</strong>. Change to 2 adults.</li>
+        <li>⏳ Book Adelaide → Bali flight (be at Denpasar airport the evening of Sun 4 Jul)</li>
+        <li>🚴 Finalise Costa Brava cycling tour (19–30 Jul) · book Girona night (18 Jul) · train Barcelona → Girona</li>
+        <li>⏳ Ferries: Santorini → Folegandros (7 Jul) · Folegandros → Milos (12 Jul)</li>
+        <li>⏳ Trains: Bordeaux → San Sebastián (11 Aug) · Genoa → Santa Margherita (16 Aug) · → Vernazza (20 Aug) · → Lake Garda (24 Aug) · → Verona (28 Aug) · → Garmisch (30 Aug) · → Munich (4 Sep)</li>
         <li>⏳ Choose seats: Athens → Santorini, Milos → Barcelona, San Sebastián → Genoa</li>
+        <li><strong>Free-cancellation deadlines</strong> — Santorini 7 Jun · Folegandros 15 Jun · Madeira (Ponta do Sol) 17 Jul · Vernazza 20 Jul · Barcelona 27 Jul · Garmisch 30 Jul · Bordeaux 1 Aug · Funchal 1 Aug · San Sebastián 5 Aug · Santa Margherita 12 Aug · Bardolino 16 Aug · Verona 22 Aug · Munich 30 Aug · Milos deposit ~13 Apr</li>
+        <li>💳 <strong>Payments coming up</strong> — Folegandros charged from ~16 Jun · Garmisch bank transfer before arrival (+ tourist tax 14 days before) · Munich Airbnb AUD $2,574.25 on 22 Aug · Santa Margherita charged 13 Aug</li>
+        <li>💶 Bring <strong>€2,112 cash</strong> for the Milos balance (12 Jul)</li>
+        <li>📧 Folegandros — email ferry name &amp; arrival time 1–2 days before 7 Jul for free port transfer</li>
+        <li>📝 Garmisch — complete online guest registration · email address for guest-folder login</li>
         <li>⚠️ <strong>8 Jul</strong> — easyJet online check-in opens for 7 Aug flight</li>
-        <li>⚠️ <strong>1 Aug</strong> — TAP check-in closes 5:15 AM in Barcelona · arrange early taxi</li>
+        <li>⚠️ <strong>1 Aug</strong> — TAP check-in closes 5:15 AM in Barcelona · book taxi ~4:00 AM</li>
+        <li>⚠️ <strong>11 Aug</strong> — San Sebastián check-in closes 8:00 PM</li>
         <li>Notify bank/cards of travel dates</li>
         <li>Save all booking confirmations offline</li>
       </ul>
@@ -1105,7 +1294,7 @@
 <!-- ══════════════════════════════════════════════════════════ -->
 <section id="insurance">
   <div class="container">
-    <div class="section-label">Chapter IV</div>
+    <div class="section-label">Chapter V</div>
     <h2 class="section-title">Travel Insurance</h2>
     <div class="warn-box" style="margin-bottom:16px;"><strong>⚠️ Policy ends mid-trip</strong>This annual policy covers 10 Aug 2026 – 10 Aug 2027, but the trip runs 5 Jul – 10 Sep 2027. Update these details once it's renewed.</div>
     <div class="booking-card">
@@ -1139,7 +1328,7 @@
 <footer>
   <strong>Wells Europe 2027</strong><br>
   Bruce &amp; Trudy Wells · 5 July – 10 September 2027<br>
-  Bali · Milan · Santorini · Milos · Barcelona · Madeira · Bordeaux · San Sebastián · Genoa · Vernazza · Garmisch · Munich<br>
+  Bali · Milan · Santorini · Folegandros · Milos · Girona · Costa Brava · Barcelona · Madeira · Bordeaux · San Sebastián · Santa Margherita · Vernazza · Lake Garda · Verona · Garmisch · Munich<br>
   <span style="color:rgba(255,255,255,.4);font-size:11px;margin-top:8px;display:block;">Created with ❤️ · Confidential</span>
 </footer>
 
@@ -1191,13 +1380,22 @@ function updateCountdown() {
 // ── Day-by-day location lookup ──────────────────────────────
 const TRIP_SEGMENTS = [
   { start: '2027-07-05', end: '2027-07-05', badge: '✈️ In Transit', short: 'Bali → Dubai → Milan', text: '✈️ Currently en route — Bali → Dubai → Milan' },
+  { start: '2027-07-19', end: '2027-07-29', badge: '🚴 Costa Brava', short: 'Costa Brava — Cycling Tour', text: '🚴 Currently cycling the Costa Brava, Spain' },
   { start: '2027-07-06', end: '2027-07-06', badge: '✈️ In Transit', short: 'Milan → Santorini', text: '✈️ Currently en route — Milan → Santorini' },
-  { start: '2027-07-07', end: '2027-07-17', badge: '🏝 Greek Islands', short: 'Santorini & Milos, Greece', text: '🏝 Currently in the Greek Islands' },
+  { start: '2027-07-07', end: '2027-07-11', badge: '📍 Folegandros', short: 'Folegandros, Greece', text: '📍 Currently in Folegandros, Greece' },
+  { start: '2027-07-12', end: '2027-07-17', badge: '📍 Milos', short: 'Milos, Greece', text: '📍 Currently in Milos, Greece' },
   { start: '2027-07-18', end: '2027-07-18', badge: '✈️ In Transit', short: 'Milos → Barcelona', text: '✈️ Currently en route — Milos → Barcelona' },
-  { start: '2027-08-01', end: '2027-08-01', badge: '✈️ In Transit', short: 'Barcelona → Madeira', text: '✈️ Currently en route — Barcelona → Madeira' },
-  { start: '2027-08-02', end: '2027-08-06', badge: '📍 Madeira', short: 'Madeira, Portugal', text: '📍 Currently in Madeira, Portugal' },
-  { start: '2027-08-07', end: '2027-08-07', badge: '✈️ In Transit', short: 'Madeira → Bordeaux', text: '✈️ Currently en route — Madeira → Bordeaux' },
-  { start: '2027-08-16', end: '2027-08-16', badge: '✈️ In Transit', short: 'San Sebastián → Genoa', text: '✈️ Currently en route — San Sebastián → Genoa' },
+  { start: '2027-07-30', end: '2027-07-31', badge: '📍 Barcelona', short: 'Barcelona, Spain', text: '📍 Currently in Barcelona, Spain' },
+  { start: '2027-08-01', end: '2027-08-03', badge: '📍 Madeira', short: 'Ponta do Sol, Madeira', text: '📍 Currently in Ponta do Sol, Madeira' },
+  { start: '2027-08-04', end: '2027-08-06', badge: '📍 Madeira', short: 'Funchal, Madeira', text: '📍 Currently in Funchal, Madeira' },
+  { start: '2027-08-07', end: '2027-08-10', badge: '📍 Bordeaux', short: 'Bordeaux, France', text: '📍 Currently in Bordeaux, France' },
+  { start: '2027-08-11', end: '2027-08-15', badge: '📍 San Sebastián', short: 'San Sebastián, Spain', text: '📍 Currently in San Sebastián, Spain' },
+  { start: '2027-08-16', end: '2027-08-19', badge: '📍 Santa Margherita', short: 'Santa Margherita Ligure, Italy', text: '📍 Currently in Santa Margherita Ligure, Italy' },
+  { start: '2027-08-20', end: '2027-08-23', badge: '📍 Vernazza', short: 'Vernazza, Cinque Terre', text: '📍 Currently in Vernazza, Cinque Terre' },
+  { start: '2027-08-24', end: '2027-08-27', badge: '📍 Lake Garda', short: 'Bardolino, Lake Garda', text: '📍 Currently in Bardolino, Lake Garda' },
+  { start: '2027-08-28', end: '2027-08-29', badge: '📍 Verona', short: 'Verona, Italy', text: '📍 Currently in Verona, Italy' },
+  { start: '2027-08-30', end: '2027-09-03', badge: '📍 Garmisch', short: 'Garmisch-Partenkirchen, Germany', text: '📍 Currently in Garmisch-Partenkirchen, Germany' },
+  { start: '2027-09-04', end: '2027-09-08', badge: '📍 Munich', short: 'Munich, Germany', text: '📍 Currently in Munich, Germany' },
   { start: '2027-09-09', end: '2027-09-09', badge: '✈️ In Transit', short: 'Munich → Dubai', text: '✈️ Currently en route — Munich → Dubai' },
   { start: '2027-09-10', end: '2027-09-10', badge: '✈️ In Transit', short: 'Arriving home!', text: '✈️ Currently en route — Dubai → Adelaide (almost home!)' }
 ];
